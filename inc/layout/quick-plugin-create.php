@@ -43,7 +43,7 @@
 	
 <label>Minimal Wordpress Version Required:</label>
 <br/>
-<select class="plugin-wordpress-version">
+<select class="plugin-wordpress-version" name="plugin-wordpress-version">
 <option disabled="disabled" selected="selected">Select Version</option>
 </select>
 	
@@ -51,7 +51,7 @@
 	
 <label>Minimal PHP Version Required:</label>
 <br/>
-<select class="plugin-php-version">
+<select class="plugin-php-version" name="plugin-php-version">
 <option disabled="disabled" selected="selected">Select Version</option>
 <option value="7.4">7.4</option>
 <option value="8.0">8.0</option>

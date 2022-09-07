@@ -54,5 +54,19 @@ add_action( 'admin_enqueue_scripts', 'quick_plugin_enqueue_scripts' );
 
 
 
+function create_plugin(){
+	global $wpdb;
+
+	require_once(plugin_dir_path(__FILE__).'../quick-plugin.class.php');
+	
+	$quickPlugin = new QuickPlugin();
+	$quickPlugin->createPlugin();
+	
+}
+
+
+add_action('wp_ajax_create_plugin', 'create_plugin');
+
+
 
 ?>

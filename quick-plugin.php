@@ -37,7 +37,7 @@ register_activation_hook( __FILE__, 'quickplugin_activate' );
 register_deactivation_hook( __FILE__, 'quickplugin_deactivate' );
 register_uninstall_hook(__FILE__, 'quickplugin_uninstall');
 
-
+define( 'QUICK_PLUGIN_PATH', substr(plugin_dir_path( __FILE__ ), 0, -1)."\\../" );
 
 require('inc/setup.php');
 

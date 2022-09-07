@@ -37,8 +37,22 @@ jQuery(document).ready(function($){
 	
 	$("form.plugin-create").on("submit", function(e){
 		e.preventDefault();
+		var formData = $(this).serializeArray();
+		var phpData = "";
+		for(var n = 0; n < formData.length; n++){
+			var name = formData[n]['name'];
+			var varName = name.split("-").join("_");
+			phpData+="$"+varName+" = $param['"+formData[n]['name']+"'];\n";
+		}
+		console.log(phpData);
 		
-		alert("form submitted");
+		console.log("ajax-url: "+ajax_object.ajax_url);
+
+		formData.push({'name':'action','value':'create_plugin'});
+		jQuery.post(ajax_object.ajax_url, formData, function(response) {
+		alert('Got this from the server: ' + response);
+	    });
+		
 	});
 	
 	
