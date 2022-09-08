@@ -50,7 +50,12 @@ jQuery(document).ready(function($){
 
 		formData.push({'name':'action','value':'create_plugin'});
 		jQuery.post(ajax_object.ajax_url, formData, function(response) {
-		alert('Got this from the server: ' + response);
+		    var output = response.replace(/\n/g, "<br />");
+			var lines = output.split("<br />");
+			
+			$("section").hide();
+			$("section.fini").show();
+			
 	    });
 		
 	});
@@ -78,5 +83,17 @@ jQuery(document).ready(function($){
 		
 		return valid;
 	}
+	
+	
+	
+	
+	$("label icon[help]").on("click", function(e){
+	    	var help = $(this).parent().next("help");
+		    var help_text = help.text();
+		    var help_text_len = help_text.split(" ").length;
+		    var read_time = Math.ceil(Math.ceil(help_text_len / 1.6666) * 1.0)*1000;
+		console.log("time: "+read_time);
+		    help.show().delay(read_time).fadeOut('slow');
+	});
 	
 });

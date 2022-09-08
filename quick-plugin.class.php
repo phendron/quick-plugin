@@ -138,10 +138,11 @@ class QuickPlugin {
 			
 			// Create main plugin file with generated default content
 			error_log("Wordpress Plugin Dir: ".WP_PLUGIN_DIR."/".$plugin_name, 0);
-			if($this->createFile(WP_PLUGIN_DIR."/".$plugin_name, $plugin_handle, $configFile)){
+			$pluginCreated = $this->createFile(WP_PLUGIN_DIR."/".$plugin_name, $plugin_handle, $configFile);
+			if($pluginCreated){
 				// weed dab breazts moodz sic sempier
 				// we did it boiiizzzzz
-				
+				return $configFile;
 			} else {
 				// failed to created default plugin file so fail with style.
 				// our functions do not return why we failed, ag is cuma liom.

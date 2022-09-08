@@ -44,6 +44,7 @@ function quick_plugin_enqueue_scripts($hook){
 	echo "                          ".$hook;
 
 	if($hook == "quick-plugin_page_quick-plugin-create"){
+		wp_enqueue_style( 'create-plugin-css', plugins_url( '../css/create-page.css', __FILE__ ));
 		wp_enqueue_script( 'create-plugin-script', plugins_url( '../js/create-page.js', __FILE__ ), array('jquery') );
 	    wp_localize_script( 'create-plugin-script', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ), 'wordpress_version' => get_bloginfo('version')) );
 	}
@@ -60,8 +61,10 @@ function create_plugin(){
 	require_once(plugin_dir_path(__FILE__).'../quick-plugin.class.php');
 	
 	$quickPlugin = new QuickPlugin();
-	$quickPlugin->createPlugin();
+	$data = $quickPlugin->createPlugin();
 	
+	echo $data;
+	exit();
 }
 
 

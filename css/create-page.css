@@ -1,0 +1,12 @@
+/* CSS Document */
+
+form {}
+
+form input {width:100%; margin-bottom:1em;}
+form select {width:100%; margin-bottom:1em;}
+form label {display:block;}
+form label icon {background-color:#202020; color:#fff; border-radius:100px; padding:5px; padding-left:10px; padding-right:10px; font-size:10px;}
+form help {display:block;}
+form help {display:none;}
+
+button.full {width:100%;}
