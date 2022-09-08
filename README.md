@@ -1,7 +1,7 @@
 # Quick Plugin
 
 ## Description
-Quick Plugin allows you to spin-up bare-bone plugins, quickly & easily directly from the admin section.
+Quick Plugin is a Wordpress plugin that allows you to spin-up bare-bone's plugins, quickly & easily directly from the admin section.
 
 
 ![Quick-Plugin-1](https://user-images.githubusercontent.com/89828158/189050102-868fdee9-40c6-4d02-b343-0071e2337c08.png)
